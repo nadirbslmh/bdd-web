@@ -17,6 +17,10 @@ public class LoginPage extends PageObject {
         return By.id("login-button");
     }
 
+    private By errorMessage() {
+        return By.xpath("//h3[@data-test='error']");
+    }
+
     @Step
     public void openPage() {
         open();
@@ -41,4 +45,14 @@ public class LoginPage extends PageObject {
     public void clickLoginButton() {
         $(loginButton()).click();
     }
+    @Step
+    public boolean validateErrorMessageIsDisplayed() {
+        return $(errorMessage()).isDisplayed();
+    }
+
+    @Step
+    public boolean validateEqualErrorMessage(String message) {
+        return $(errorMessage()).getText().equalsIgnoreCase(message);
+    }
+
 }

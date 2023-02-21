@@ -40,4 +40,15 @@ public class LoginSteps {
     public void onTheHomePage() {
         homePage.validateOnHomePage();
     }
+
+    @When("I input locked username")
+    public void inputLockedUsername() {
+        loginPage.inputUserName("locked_out_user");
+    }
+
+    @Then("I can see error message {string}")
+    public void validateErrorMessage(String message) {
+        loginPage.validateErrorMessageIsDisplayed();
+        loginPage.validateEqualErrorMessage(message);
+    }
 }
