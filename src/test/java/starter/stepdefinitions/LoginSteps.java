@@ -51,4 +51,9 @@ public class LoginSteps {
         loginPage.validateErrorMessageIsDisplayed();
         loginPage.validateEqualErrorMessage(message);
     }
+
+    @When("I input {string} username")
+    public void iInputUsername(String username) {
+        loginPage.inputUserName(username);
+    }
 }
