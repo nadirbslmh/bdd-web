@@ -22,11 +22,6 @@ public class LoginPage extends PageObject {
     }
 
     @Step
-    public void openPage() {
-        open();
-    }
-
-    @Step
     public boolean validateOnLoginPage() {
         return $(loginButton()).isDisplayed();
     }

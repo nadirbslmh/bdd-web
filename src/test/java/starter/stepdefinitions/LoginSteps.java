@@ -17,7 +17,6 @@ public class LoginSteps {
 
     @Given("I am on the login page")
     public void onTheLoginPage() {
-//        loginPage.openPage();
         loginPage.openUrl("https://www.saucedemo.com/");
         loginPage.validateOnLoginPage();
     }
